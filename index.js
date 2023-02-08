@@ -8,8 +8,8 @@ const squareNumberVertically = 20;
 const squareSize = 36;
 const width = squareSize * squareNumberHorizontally;
 const height = squareSize * squareNumberVertically;
-const xc = width/5;
-const yc = 4*(height/5);
+const xc = 0;
+const yc = height/2;
 
 canvas.width = width;
 canvas.height = height;
@@ -184,10 +184,10 @@ function stepResponse(t){
 }
 
 plot(
-  createList(0, 25, 0.001, (x) => {
+  createList(0, 40, 0.001, (x) => {
     return x;
   }),
-  createList(0, 25, 0.001, (x) => {
+  createList(0, 40, 0.001, (x) => {
     return gain*stepResponse(x);
   }),
   "#f0f8ff",
@@ -199,10 +199,10 @@ slider1.oninput = function () {
   drawGrid();
   zeta = this.value / 24;
   plot(
-    createList(0, 25, 0.001, (x) => {
+    createList(0,40, 0.001, (x) => {
       return x;
     }),
-    createList(0, 25, 0.001, (x) => {
+    createList(0,40 , 0.001, (x) => {
       return gain*stepResponse(x);
     }),
     "#f0f8ff",
@@ -216,14 +216,14 @@ slider2.oninput = function () {
   drawGrid();
   wn = this.value / 24;
   plot(
-    createList(0, 25, 0.001, (x) => {
+    createList(0, 40, 0.001, (x) => {
       return x;
     }),
-    createList(0, 25, 0.001, (x) => {
+    createList(0,40, 0.001, (x) => {
       return gain*stepResponse(x);
     }),
     "#f0f8ff",
-    1
+   1 
   );
 };
 slider3.oninput = function () {
@@ -232,10 +232,10 @@ slider3.oninput = function () {
   drawGrid();
   gain = this.value / 24;
   plot(
-    createList(0, 25, 0.001, (x) => {
+    createList(0,40, 0.001, (x) => {
       return x;
     }),
-    createList(0, 25, 0.001, (x) => {
+    createList(0,40, 0.001, (x) => {
       return gain*stepResponse(x);
     }),
     "#f0f8ff",
